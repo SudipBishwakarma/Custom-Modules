@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Pebble_ReferAFriend>
+            <version>0.1.0</version>
+        </Pebble_ReferAFriend>
+    </modules>
+    <frontend>
+        <routers>
+            <referfriend>
+                <use>standard</use>
+                <args>
+                    <module>Pebble_ReferAFriend</module>
+                    <frontName>referfriend</frontName>
+                </args>
+            </referfriend>
+        </routers>
+    </frontend>
+</config>

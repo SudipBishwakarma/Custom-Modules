@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Pebble_InkComparision>
+            <version>0.1.0</version>
+        </Pebble_InkComparision>
+    </modules>
+    <frontend>
+        <routers>
+            <routeurfrontend>
+                <use>standard</use>
+                <args>
+                    <module>Pebble_InkComparision</module>
+                    <frontName>ink-comparision</frontName>
+                </args>
+            </routeurfrontend>
+        </routers>
+    </frontend>
+</config>

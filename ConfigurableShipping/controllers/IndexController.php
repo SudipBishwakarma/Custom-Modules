@@ -1,0 +1,41 @@
+<?php
+
+/**
+ * Email Quote index controller
+ *
+ * @category    Pebble
+ * @package     Pebble_ReferAFriend
+ */
+class Pebble_ConfigurableShipping_IndexController extends Mage_Core_Controller_Front_Action
+{
+        public function indexAction(){
+                $id = $this->getRequest()->getPost('id');
+                //$_product = Mage::getModel('catalog/product')->load($id);
+                //$qty = round($_product->getStockItem()->getQty(), 2);
+                $productAvailabilityStatus = mage::getModel('SalesOrderPlanning/ProductAvailabilityStatus')->load($id, 'pa_product_id');
+                $_product = Mage::getSingleton('catalog/product')->load($id);
+                $backorder = Mage::getModel('cataloginventory/stock_item')->loadByProduct($_product)->getBackorders();
+                $availabilityMessage = '';
+                if ($productAvailabilityStatus)
+                $availabilityMessage = $productAvailabilityStatus->getMessage();
+?>
+            <?php if ($backorder != '101'): //Check if product is preorder?>
+                <p class="available ships-txt">
+                    <?php //if(($qty <= 0)): ?>
+                    <?php //echo "Ships in 6-10 days";?>
+                    <?php //else:?>
+                    <?php //echo "Ships in 1-2 days";?>
+                    <?php //endif; ?>
+                    <?php //ERP Planning Message show ?>
+                    <?php if($availabilityMessage=='In Stock'):?>
+                    <?php echo "Ships within 1-3 business days";?>
+                    <?php else:?>
+                    <?php echo $availabilityMessage; ?>
+                    <?php endif;?>
+                    <?php //ERP Planning message end?>
+                </p>
+            <?php endif; ?>
+<?php
+        }
+}
+?>

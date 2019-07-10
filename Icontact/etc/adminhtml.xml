@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!--
+ * @category    Pebble
+ * @package     Pebble_Icontact
+ * @copyright   Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+-->
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <icontact translate="title" module="icontact">
+                                        <title>Icontact Section</title>
+                                    </icontact>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

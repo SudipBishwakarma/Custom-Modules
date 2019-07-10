@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<config>
+    <sections>
+        <icontact module="icontact">
+            <label>iContact Configuration</label>
+            <tab>customer</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>400</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+
+            <settings translate="label">
+              <label>Settings</label>
+              <frontend_type>text</frontend_type>
+              <sort_order>100</sort_order>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>1</show_in_store>
+                <comment>
+                <![CDATA[
+
+                        <a href="https://www.icontact.com/login" target="_blank"><img src="http://www.icontactimg.com/static/img/logo-grey.png?ver=1120868889" />
+                        </a>
+                        <br/><br/>
+                        <strong>Setup</strong>
+                        <ol style="list-style:inside decimal;">
+                          <li>Access your client credentials to registe a new application through <a href="https://app.icontact.com/icp/core/registerapp/" target="_blank">Register New Application</a>.
+                          <li>Please Fill The Details Below.
+                          <li>Application ID  - Put Generated Application ID (Register Applicaton). 
+                          <li>Application Username - Put Icontact Username.
+                          <li> Application Password - Put Application Password (Register Applicaton).    
+                          <li>Click Save Config.
+                        </ol>
+                        
+                        <div style="clear:both;"></div>
+                ]]>
+                </comment>
+              <fields>
+
+              <active translate="label">
+                    <label>Enabled</label>
+                    <frontend_type>select</frontend_type>
+                    <source_model>adminhtml/system_config_source_yesno</source_model>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                </active>
+
+                <appId translate="label">
+                    <label>Application ID</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>20</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                </appId>
+
+                <apiUsername translate="label">
+                    <label>Application Username</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>30</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                </apiUsername>
+
+                <apiPassword translate="label">
+                    <label>Application Password</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>40</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                </apiPassword>
+
+                <contactList translate="label">
+                  <label>Contact List</label>
+                  <comment>Contact List pulled from iContact</comment>
+                  <frontend_type>select</frontend_type>
+                  <source_model>icontact/system_config_source_contactlist</source_model>
+                  <sort_order>50</sort_order>
+                  <show_in_default>1</show_in_default>
+                  <show_in_website>1</show_in_website>
+                  <show_in_store>1</show_in_store>
+                </contactList>
+
+                <!-- <sandbox_mode translate="label">
+                  <label>Sandbox Mode</label>
+                  <frontend_type>select</frontend_type>
+                  <source_model>adminhtml/system_config_source_yesno</source_model>
+                  <sort_order>60</sort_order>
+                  <show_in_default>1</show_in_default>
+                  <show_in_website>1</show_in_website>
+                  <show_in_store>1</show_in_store>
+                </sandbox_mode> -->
+
+
+              </fields>
+            </settings>
+
+
+
+            </groups>            
+        </icontact>
+    </sections>
+</config>
+<!--<li><a href="https://www.icontact.com/signup" target="_blank">Sign Up</a> for iContact email marketing with a 30-day trial. No payment required.-->

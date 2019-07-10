@@ -1,0 +1,70 @@
+
+<?php
+
+class Pebble_InkComparision_IndexController extends Mage_Core_Controller_Front_Action
+{
+
+
+
+    public function update_productsAction()
+    {
+        if($this->getRequest()->isXmlHttpRequest())
+        {
+            $brand_code = 'manufacturer';
+            $ink_brand = $this->getRequest()->getPost('ink_brand');
+            $category_id = $this->getRequest()->getPost('category_id');
+            $refill_category = Mage::getModel('catalog/category')->load($category_id);
+            $products = Mage::getResourceModel('catalog/product_collection')
+                ->addCategoryFilter($refill_category)
+                //->addAttributeToFilter('entity_id', array('nin'=> Mage::getSingleton('core/session')->getCompareProducts()))
+                ->addAttributeToSelect('*');
+
+            if(isset($ink_brand) && $ink_brand>0)
+            {
+                $products->addAttributeToFilter( $brand_code, $ink_brand );
+            }
+
+            if(sizeof(Mage::getSingleton('core/session')->getCompareProducts()) > 0)
+            {
+                $products->addAttributeToFilter('entity_id', array('nin'=> Mage::getSingleton('core/session')->getCompareProducts()));
+            }
+            $products->setPageSize(40);
+
+            $product_size = sizeof($products);
+
+
+            if($product_size > 0)
+            {
+                foreach ($products as $_product)
+                {
+                    echo '<div class="col-md-3" id="compare-product-id-'.$_product->getId().'">';
+                        echo '<div class="fly-eff">';
+                            echo '<div class="thumb-holder"><img src="'.Mage::helper('catalog/image')->init($_product, 'small_image')->resize(272,246).'" class="img-responsive" /></div>';
+                            echo '<h2>'.$_product->getName().'</h2>';
+                            echo '<button class="button my-btn" type="button" onclick="add_to_compare('.$_product->getId().');">Add to Compare</button>';
+                        echo '</div>';
+                    echo '</div>';
+                }
+
+            }
+            else
+            {
+                echo '<div class="text-danger">No products for comparision...</div>';
+            }
+
+            //echo sizeof($products);
+        }
+
+    }
+
+    public function add_to_compareAction()
+    {
+        $pid = $this->getRequest()->getPost('pid');
+        $compared_products = Mage::getSingleton('core/session')->getCompareProducts();
+        array_push($compared_products,$pid);
+        $compared_products = array_unique($compared_products);
+        Mage::getSingleton('core/session')->setCompareProducts($compared_products);
+        echo sizeof($compared_products);
+    }
+}
+?>

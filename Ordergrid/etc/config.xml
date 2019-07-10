@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Pebble_Ordergrid>
+      <version>1.0.0</version>
+    </Pebble_Ordergrid>
+  </modules>
+  <global>
+    <helpers>
+      <ordergrid>
+        <class>Pebble_Ordergrid_Helper</class>
+      </ordergrid>
+    </helpers>
+    <blocks>
+      <ordergrid>
+        <class>Pebble_Ordergrid_Block</class>
+      </ordergrid>
+      <adminhtml>
+        <rewrite>
+          <sales_order_grid>Pebble_Ordergrid_Block_Adminhtml_Sales_Order_Grid</sales_order_grid>
+        </rewrite>
+      </adminhtml>
+    </blocks>
+  </global>
+  <admin>
+    <routers>
+      <adminhtml>
+       <args>
+         <modules>
+          <Pebble_Ordergrid before="Mage_Adminhtml">Pebble_Ordergrid_Adminhtml</Pebble_Ordergrid>
+        </modules>
+      </args>
+    </adminhtml>
+  </routers>
+</admin>
+</config> 

@@ -1,0 +1,26 @@
+<config>
+    <modules>
+        <Pebble_Redirect>
+            <version>1.0.0</version>
+        </Pebble_Redirect>
+    </modules>
+    <global>
+        <models>
+            <pebble_redirect>
+                <class>Pebble_Redirect_Model</class>
+            </pebble_redirect>
+        </models>
+    </global>
+    <frontend>
+        <events>
+            <controller_action_predispatch_catalog_product_view>
+                <observers>
+                    <pebble_redirect>
+                        <class>pebble_redirect/observer</class>
+                        <method>redirectToConfigurable</method>
+                    </pebble_redirect>
+                </observers>
+            </controller_action_predispatch_catalog_product_view>
+        </events>
+    </frontend>
+</config>

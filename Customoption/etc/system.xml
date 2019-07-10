@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE config>
+
+<config>
+    <sections>
+        <general translate="label">
+            <groups>
+                <coupon_product translate="label">
+                    <label>Scratch Coupon Product</label>
+                    <sort_order>0</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <coupon_product_sku translate="label">
+                            <label>Promotional Product SKU</label>
+                            <frontend_type>text</frontend_type>
+                            <validate>required-entry</validate>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </coupon_product_sku>
+                    </fields>
+                </coupon_product>
+            </groups>
+        </general>
+    </sections>
+</config>

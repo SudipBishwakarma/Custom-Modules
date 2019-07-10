@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Pebble_CustomProductAttribute>
+            <version>0.0.1</version>
+        </Pebble_CustomProductAttribute>
+    </modules>
+ 
+    <global>
+        <resources>
+            <add_product_attribute>
+                <setup>
+                    <module>Pebble_CustomProductAttribute</module>
+                    <class>Mage_Catalog_Model_Resource_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </add_product_attribute>
+            <add_product_attribute_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </add_product_attribute_write>
+            <add_product_attribute_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </add_product_attribute_read>
+        </resources>
+    </global>
+</config>

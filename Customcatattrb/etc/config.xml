@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Pebble_Customcatattrb>
+            <version>0.0.2</version>
+        </Pebble_Customcatattrb>
+    </modules>
+    <global>
+        <resources>
+            <customcatattrb_setup>
+                <setup>
+                    <module>Pebble_Customcatattrb</module>
+                    <class>Mage_Eav_Model_Entity_Setup</class>
+                </setup>
+                <connection>
+                    <use>default_setup</use>
+                </connection>
+            </customcatattrb_setup>
+        </resources>
+    </global>
+</config>

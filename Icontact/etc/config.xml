@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<config>
+    <global>
+        <helpers>
+            <icontact>
+                <class>Pebble_Icontact_Helper</class>               
+            </icontact>           
+        </helpers>
+        <models>  
+            <icontact>
+                <class>Pebble_Icontact_Model</class>
+            </icontact>
+        </models> 
+    </global>
+
+    <frontend>
+        <routers>            
+            <newsletter><!-- <icontact> -->
+                <use>standard</use>
+                <args>
+                    <!-- <module>Pebble_Icontact</module> -->
+                    <!-- <frontName>icontact</frontName> -->
+                    <!--pebble_icontact -->
+                    <modules>
+                        <Pebble_Icontact before="Mage_Newsletter">Pebble_Icontact</Pebble_Icontact>
+                    </modules>
+                </args>
+            </newsletter>
+        </routers>
+        <!-- <layout>
+            <updates>
+                <icontact>
+                    <file>icontact.xml</file>
+                </icontact>
+            </updates>
+        </layout>  -->       
+    </frontend>
+    <!--
+    <global>
+        <rewrite>
+            <icontact>
+                <from><![CDATA[#^/newsletter/subscriber/#]]></from>
+                <to>/icontact/subscriber/</to>
+            </icontact>
+        </rewrite>
+    </global>
+    -->
+    <default>
+        <icontact>
+            <settings>
+                <enabled>1</enabled>
+            </settings>
+        </icontact>
+    </default>
+</config>

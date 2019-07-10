@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Pebble_ConfigurableShipping>
+            <version>0.1.0</version>
+        </Pebble_ConfigurableShipping>
+    </modules>
+    <frontend>
+        <routers>
+            <configurable_shipping>
+                <use>standard</use>
+                <args>
+                    <module>Pebble_ConfigurableShipping</module>
+                    <frontName>configurable_shipping</frontName>
+                </args>
+            </configurable_shipping>
+        </routers>
+    </frontend>
+</config>

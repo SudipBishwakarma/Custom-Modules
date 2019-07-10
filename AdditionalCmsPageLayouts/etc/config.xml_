@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Namespace_Module>
+      <version>0.1.0</version>
+    </Namespace_Module>
+  </modules>
+  <global>
+    <page>
+      <layouts>
+        <homePage translate="label">
+          <label>Home Page</label>
+          <template>page/homepage.phtml</template>
+          <layout_handle>homePage</layout_handle>
+        </homePage>
+        <productDetail translate="label">
+          <label>Product Detail</label>
+          <template>page/product-detail.phtml</template>
+          <layout_handle>productDetail</layout_handle>
+        </productDetail>
+        <productList translate="label">
+          <label>Product List</label>
+          <template>page/product-list.phtml</template>
+          <layout_handle>productList</layout_handle>
+        </productList>
+        <dailydeals translate="label">
+          <label>Dailydeals</label>
+          <template>page/dailydeals.phtml</template>
+          <layout_handle>dailydeals</layout_handle>
+        </dailydeals>
+        <salessaving translate="label">
+          <label>SalesSaving</label>
+          <template>page/sales-saving.phtml</template>
+          <layout_handle>salessaving</layout_handle>
+        </salessaving>
+        <blackfriday translate="label">
+          <label>Black Friday</label>
+          <template>page/blackfriday.phtml</template>
+          <layout_handle>blackfriday</layout_handle>
+        </blackfriday>
+      	<promotionalpage translate="label">
+      	  <label>Promotional Page</label>
+                <template>page/promotional-page.phtml</template>
+      	</promotionalpage>
+      </layouts>
+    </page>
+  </global>
+</config>

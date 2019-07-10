@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Pebble_AjaxProductToCart>
+            <version>0.1.0</version>
+        </Pebble_AjaxProductToCart>
+    </modules>
+    <frontend>
+        <routers>
+            <producttocart>
+                <use>standard</use>
+                <args>
+                    <module>Pebble_AjaxProductToCart</module>
+                    <frontName>ajax</frontName>
+                </args>
+            </producttocart>
+        </routers>
+    </frontend>
+</config>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Pebble_EmailQuote>
+            <version>0.1.0</version>
+        </Pebble_EmailQuote>
+    </modules>
+    <frontend>
+        <routers>
+            <emailquote>
+                <use>standard</use>
+                <args>
+                    <module>Pebble_EmailQuote</module>
+                    <frontName>emailquote</frontName>
+                </args>
+            </emailquote>
+        </routers>
+    </frontend>
+</config>
